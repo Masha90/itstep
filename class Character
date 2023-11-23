@@ -1,0 +1,12 @@
+class Character:
+    def __init__(self, damage=0):
+        self.damage=damage
+
+    def __str__(self):
+        return f'damage: {self.damage}\n'
+
+    def attack(self, target):
+        return target.take_damage(self.damage)
+
+    def alive(self):
+        return self.damage > 0
