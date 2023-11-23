@@ -1,0 +1,63 @@
+class Person:
+    def __init__(self, name, health=100, mood=100,money=90):
+        self.name=name
+        self.health=health
+        self.mood=mood
+        self.money=money
+
+    name = ''
+    health = 100
+    mood = 90
+    money = 2/5
+
+
+    def __str__(self):
+        return f' - {self.name} -\n' \
+               f' health: {self.health}\n' \
+               f' mood: {self.mood}\n' \
+               f' money: {self.money}'
+
+
+def change_state(self, money=0, mood=0, health=0):
+    self.money+=money
+    self.mood+=mood
+    self.health+=health
+
+human=Person(name='', money=0, mood=70, health=100)
+human.change_state(
+      money_change=100,
+      mood_change=-40, 
+      health_change=-5)
+
+
+
+import random
+
+class Person:
+    def __init__(self, name,  money, health, mood):
+        self.name = name
+        self.money = money
+        self.health = health
+        self.mood = mood
+
+    def work(self):
+        self.money += random.randint(100, 1000)
+        self.health -= random.randint(1, 5)
+        self.mood -= random.randint(1, 5)
+
+    def rest(self):
+
+
+        self.mood += random.randint(1, 5)
+        self.health += random.randint(1, 5)
+        if random.choice([True, False]):
+            self.money -= random.randint(100, 500)
+        else:
+            self.money += random.randint(50, 200)
+
+
+
+while True:
+    for person in people:
+        action = random.choice(["work", "rest"])
+        person.change_state(action)
